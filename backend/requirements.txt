@@ -47,3 +47,4 @@ django-storages
 boto
 boto3
 botocore
+django-filter

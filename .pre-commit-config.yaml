@@ -25,7 +25,7 @@ repos:
     hooks:
       - id: isort
         types: [python]
-        args: ["--profile", "black"]
+        args: ["--profile", "black", "--multi-line", "3", "--line-length", "88"]
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.3.0
     hooks:
