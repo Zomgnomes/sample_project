@@ -1,0 +1,18 @@
+tasks:
+  - name: Run Backend
+    command: bash .gitpod/run-backend.sh
+
+github:
+  prebuilds:
+    master: true
+    branches: true
+    pullRequests: true
+    pullRequestsFromForks: false
+    addBadge: false
+    addCheck: true
+    addLabel: false
+
+ports:
+  - port: 8000
+    visibility: private
+    onOpen: open-browser

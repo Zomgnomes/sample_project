@@ -1,0 +1,23 @@
+version: '3.3'
+services:
+  backend:
+    build:
+      context: ./backend
+    depends_on:
+      - postgres
+    volumes:
+      - ./backend:/app
+    command: /start.sh
+    entrypoint: /entrypoint.sh
+    restart: on-failure
+    env_file: .env
+    stop_signal: SIGINT
+    ports:
+      - "8000:8000"
+  postgres:
+    image: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    env_file: .env
+volumes:
+  postgres_data: {}
